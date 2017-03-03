@@ -11,8 +11,7 @@ class Generator
     public $version;
     public $url;
 
-    public function __construct()
-    {
+    public function __construct() {
         $this->name = 'WP Plugin Starter';
         $this->slug = 'plugin-name';
         $this->option = 'plugin_name_settings';
@@ -32,10 +31,10 @@ class Generator
         @mkdir($dst);
         while (false !== ($file = readdir($dir))) {
             if (($file != '.') && ($file != '..')) {
-                if (is_dir($src.'/'.$file)) {
-                    self::recursive_copy($src.'/'.$file, $dst.'/'.$file);
+                if (is_dir($src . '/' . $file)) {
+                    self::recursive_copy($src . '/' . $file, $dst . '/' . $file);
                 } else {
-                    copy($src.'/'.$file, $dst.'/'.$file);
+                    copy($src . '/' . $file, $dst . '/' . $file);
                 }
             }
         }
@@ -58,11 +57,10 @@ class Generator
             if ($item == '.' || $item == '..') {
                 continue;
             }
-            if (!self::recursive_delete($dir.DIRECTORY_SEPARATOR.$item)) {
+            if (!self::recursive_delete($dir . '/' . $item)) {
                 return false;
             }
         }
-
         return rmdir($dir);
     }
 
@@ -76,10 +74,9 @@ class Generator
      */
     public static function rglob($pattern, $flags = 0) {
         $files = glob($pattern, $flags);
-        foreach (glob(dirname($pattern).'/*', GLOB_ONLYDIR | GLOB_NOSORT) as $dir) {
-            $files = array_merge($files, self::rglob($dir.'/'.basename($pattern), $flags));
+        foreach (glob(dirname($pattern) . '/*', GLOB_ONLYDIR | GLOB_NOSORT) as $dir) {
+            $files = array_merge($files, self::rglob($dir . '/' . basename($pattern), $flags));
         }
-
         return $files;
     }
 
@@ -101,9 +98,9 @@ class Generator
      */
     public function batch_search_replace_files($arr) {
         foreach ($arr as $val) {
-            $src = $val[0];
-            $old = $val[1];
-            $new = $val[2];
+            $src    = $val[0];
+            $old    = $val[1];
+            $new    = $val[2];
             $output = file_get_contents($src);
             $output = str_replace($old, $new, $output);
             file_put_contents($src, $output);
@@ -118,7 +115,7 @@ class Generator
      * @param string $new The replacement string
      */
     public function search_replace_all_files($src, $old, $new) {
-        $files = self::rglob($src.'/*.php');
+        $files = self::rglob($src . '/*.php');
         foreach ($files as $file) {
             $output = file_get_contents($file);
             $output = str_replace($old, $new, $output);
@@ -147,7 +144,7 @@ class Generator
         foreach ($files as $file) {
             if (!$file->isDir()) {
                 $path = $file->getPathName();
-                $rel_path = str_replace($src.'/', '', $path);
+                $rel_path = str_replace($src . '/', '', $path);
                 $zip->addFile($path, $rel_path);
             }
         }
@@ -155,8 +152,8 @@ class Generator
         $zip->close();
 
         header('Content-Type: application/zip');
-        header('Content-disposition: attachment; filename='.$zipname);
-        header('Content-Length: '.filesize($zipname));
+        header('Content-disposition: attachment; filename=' . $zipname);
+        header('Content-Length: ' . filesize($zipname));
         readfile($zipname);
 
         unlink($zipname);
