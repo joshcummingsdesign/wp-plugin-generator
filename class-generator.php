@@ -155,7 +155,6 @@ class Generator
         header('Content-disposition: attachment; filename=' . $zipname);
         header('Content-Length: ' . filesize($zipname));
         readfile($zipname);
-
         unlink($zipname);
     }
 }
