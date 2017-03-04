@@ -1,7 +1,11 @@
 (function ($) {
   'use strict';
 
+  /**
+   * The main form validation function
+   */
   var formValidation = function () {
+
     var $form      = $('#generator-form'),
         $inputs    = $form.find('.base-input'),
         $name      = $form.find('#generator-name'),
@@ -12,15 +16,25 @@
         $url       = $form.find('#generator-url'),
         errors;
 
+    /**
+     * Initialize tooltipster
+     */
     $('.tooltip').tooltipster({
       trigger: 'custom',
       onlyOne: false
     });
 
+    /**
+     * Clear errors on input focus
+     */
     $inputs.focus(function () {
       $(this).tooltipster('hide').removeClass('error');
     });
 
+
+    /**
+     * Validate the input fields
+     */
     function validate() {
 
       // Name
@@ -67,6 +81,9 @@
       }
     }
 
+    /**
+     * Run validation on form submit
+     */
     $form.submit(function (e) {
       e.preventDefault();
       errors = 0;
@@ -75,6 +92,9 @@
     });
   };
 
+  /**
+   * Fire JS on DOM Ready!
+   */
   $(document).ready(function () {
     formValidation();
   });
