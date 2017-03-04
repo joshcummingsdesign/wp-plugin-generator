@@ -1,3 +1,124 @@
 /*===================================
 =            Main Styles            =
 ===================================*/
+
+/*----------- Global -----------*/
+
+html * {
+  box-sizing: border-box;
+  font-family: 'Lato', sans-serif;
+}
+
+html {
+  font-size: 10px;
+}
+
+body {
+  font-size: 1.6rem;
+  color: #3b3f44;
+  font-weight: 300;
+  background-color: #f5f5f5;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 0 0 1em;
+  font-weight: 900;
+}
+
+input, button {
+  box-shadow: none;
+  border: none;
+  background-color: transparent;
+  -webkit-appearance: none;
+}
+
+input::-webkit-input-placeholder {
+  color: #bbb;
+}
+input::-moz-placeholder {
+  color: #bbb;
+}
+input:-ms-input-placeholder {
+  color: #bbb;
+}
+input:-moz-placeholder {
+  color: #bbb;
+}
+
+textarea,
+input[type=text] {
+  background-color: #f9f9f9;
+  transition: border-color 0.3s ease-in-out;
+  outline: none;
+}
+
+textarea:focus,
+textarea:hover,
+input[type=text]:focus,
+input[type=text]:hover {
+  border-color: #3b3f44;
+}
+
+/*----------- Form -----------*/
+
+.form-wrap {
+  padding: 3.4rem;
+  position: relative;
+  text-align: center;
+  width: 100%;
+}
+
+.tooltipster-base {
+  background-color: #ea565d;
+  border: none;
+}
+
+.tooltipster-content {
+  font-family: 'Lato', sans-serif !important;
+}
+
+/*----------- Buttons -----------*/
+
+.btn {
+  cursor: pointer;
+  background-color: #77af8b;
+  color: #f5f5f5;
+  padding: 1.8rem 3.2rem;
+  border-radius: 3px;
+  letter-spacing: 0.2rem;
+  text-transform: uppercase;
+  transition: background-color 0.3s ease-in-out;
+  display: inline-block;
+}
+
+.btn:focus,
+.btn:hover {
+  background-color: #61a278
+}
+
+/*----------- Inputs -----------*/
+
+.base-input {
+  border: 1px solid #bbb;
+  border-radius: 3px;
+  padding: 1.5rem;
+  width: 100%;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.base-input.error {
+  border-color: #ea565d;
+}
+
+/*----------- Media Queries -----------*/
+
+@media only screen and (min-height: 598px) {
+  .form-wrap {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    transform: translateY(-50%);
+  }
+}

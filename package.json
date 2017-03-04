@@ -1,0 +1,24 @@
+{
+  "name": "wp-plugin-generator",
+  "version": "1.0.0",
+  "author": "Josh Cummings <hello@joshcummingsdesign.com> (https://joshcummingsdesign.com)",
+  "description": "A generator for the WP Plugin Starter.",
+  "private": true,
+  "main": "gulpfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/joshcummingsdesign/wp-plugin-generator.git"
+  },
+  "license": "GPL-2.0",
+  "bugs": {
+    "url": "https://github.com/joshcummingsdesign/wp-plugin-generator/issues"
+  },
+  "homepage": "https://github.com/joshcummingsdesign/wp-plugin-generator#readme",
+  "devDependencies": {
+    "browser-sync": "^2.18.8",
+    "gulp": "^3.9.1"
+  }
+}
