@@ -88,7 +88,7 @@ if(isset($_POST['name'], $_POST['slug'], $_POST['option'], $_POST['namespace'], 
             $slug,
         ],
         [
-            $pdst . 'uninstall.php',
+            $pdst . '/uninstall.php',
             $generator->option,
             $option,
         ],
