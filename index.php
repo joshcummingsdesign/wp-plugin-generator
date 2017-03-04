@@ -5,6 +5,7 @@
         <meta http-equiv="x-ua-compatible" content="ie=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>WP Plugin Generator</title>
+        <meta name="description" content="A generator for the WordPress Plugin Starter.">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:300,900">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tooltipster/3.3.0/css/tooltipster.min.css">
@@ -20,7 +21,7 @@
                 <input id="generator-namespace" title="Must be a valid namespace." class="base-input tooltip"  type="text" name="namespace" placeholder="PHP Namespace"><br><br>
                 <input id="generator-version" title="Invalid version number." class="base-input tooltip"  type="text" name="version" placeholder="Plugin Version"><br><br>
                 <input id="generator-url" title="Invalid URL. Remember the trailing slash." class="base-input tooltip" type="text" name="url" placeholder="Update URL"><br><br>
-                <input id="generator-submit" class="btn" type="submit" value="Submit">
+                <input id="generator-submit" class="btn" type="submit" value="Download">
             </form>
         </div>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
