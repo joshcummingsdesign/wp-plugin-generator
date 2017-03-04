@@ -87,6 +87,11 @@ if(isset($_POST['name'], $_POST['slug'], $_POST['option'], $_POST['namespace'], 
             $generator->slug,
             $slug,
         ],
+        [
+            $pdst . 'uninstall.php',
+            $generator->option,
+            $option,
+        ],
     ];
     $generator->batch_search_replace_files($arr);
 
