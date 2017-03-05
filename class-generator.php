@@ -130,7 +130,9 @@ class Generator
      * @param string $filename The name of the zip file (minus the .zip)
      */
     public function zip_it($src, $filename) {
-        $zipname = $filename.'.zip';
+        $zipname  = $filename.'.zip';
+        $filename = explode('/', $zipname);
+        $filename = end($filename);
 
         $zip = new \ZipArchive();
 
@@ -152,9 +154,8 @@ class Generator
         $zip->close();
 
         header('Content-Type: application/zip');
-        header('Content-disposition: attachment; filename=' . $zipname);
+        header('Content-disposition: attachment; filename=' . $filename);
         header('Content-Length: ' . filesize($zipname));
         readfile($zipname);
-        unlink($zipname);
     }
 }

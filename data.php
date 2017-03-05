@@ -17,7 +17,7 @@ if(isset($_POST['name'], $_POST['slug'], $_POST['option'], $_POST['namespace'], 
     $url       = $_POST['url'];
 
     // Make a temp directory
-    $rand = mt_rand(100000, 999999);
+    $rand = mt_rand(100000000, 999999999);
     $temp = 'tmp/' . $rand;
     mkdir($temp);
 
@@ -99,7 +99,7 @@ if(isset($_POST['name'], $_POST['slug'], $_POST['option'], $_POST['namespace'], 
     $generator->search_replace_all_files($pdst, $generator->namespace, $namespace);
 
     // Create and download zip file
-    $generator->zip_it($dst, $slug);
+    $generator->zip_it($dst, $temp . '/' . $slug);
 
     // Delete temp directory
     $generator::recursive_delete($temp);
