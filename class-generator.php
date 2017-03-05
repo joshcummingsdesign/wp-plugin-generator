@@ -12,12 +12,12 @@ class Generator
     public $url;
 
     public function __construct() {
-        $this->name = 'WP Plugin Starter';
-        $this->slug = 'plugin-name';
-        $this->option = 'plugin_name_settings';
+        $this->name      = 'WP Plugin Starter';
+        $this->slug      = 'plugin-name';
+        $this->option    = 'plugin_name_settings';
         $this->namespace = 'PLUGIN_NAME';
-        $this->version = '1.0';
-        $this->url = 'https://example.com/';
+        $this->version   = '1.0';
+        $this->url       = 'https://example.com/';
     }
 
     /**

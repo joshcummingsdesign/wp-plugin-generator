@@ -43,6 +43,16 @@ if(isset($_POST['name'], $_POST['slug'], $_POST['option'], $_POST['namespace'], 
     // Batch search replace specific files
     $arr = [
         [
+            $pdst . '/README.txt',
+            $generator->name,
+            $name,
+        ],
+        [
+            $pdst . '/README.txt',
+            $generator->version,
+            $version,
+        ],
+        [
             $pdst . '/' . $slug . '.php',
             $generator->name,
             $name,
